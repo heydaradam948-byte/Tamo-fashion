@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NEXUS ET BOUTIQUE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="glass-header">
+        <span class="logo">NEXUS<b>ET</b></span>
+        <div class="cart-pill" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="home" class="page-section active">
+            <div class="hero-card">
+                <h1>Elegance in Faith</h1>
+                <p>Premium Hijabs, Perfumes & Madawar.</p>
+                <button class="btn-primary" onclick="showPage('shop')">Explore Shop</button>
+            </div>
+            <div class="info-strip">📍 Fast Delivery in Chiro </div>
+        </section>
+
+        <section id="shop" class="page-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+            </div>
+
+            <div class="category-wrapper">
+                <button class="cat-btn active" onclick="filterShop('all', this)">All Items</button>
+                <button class="cat-btn" onclick="filterShop('hijab', this)">Hijabs</button>
+                <button class="cat-btn" onclick="filterShop('perfume', this)">Perfumes</button>
+                <button class="cat-btn" onclick="filterShop('clothing', this)">Madawar</button>
+            </div>
+
+            <div class="grid" id="product-list"></div>
+        </section>
+
+        <section id="contact" class="page-section">
+            <div class="contact-box">
+                <h2>Customer Support</h2>
+                <p>Have questions? Reach out to us directly.</p>
+                <button class="btn-primary" style="width:100%; margin-bottom:10px;" onclick="window.open('https://t.me/yourusername')">Message on Telegram</button>
+                <button class="btn-primary" style="width:100%; background:#25D366; color:white;" onclick="window.open('https://wa.me/251911223344')">WhatsApp Us</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="cart-overlay">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Shopping Bag</h3>
+                <button class="close-btn" onclick="toggleCart()">✕</button>
+            </div>
+            <div id="cart-items-list">
+                </div>
+            <div class="cart-footer">
+                <div class="total-row">
+                    <span>Total Cost:</span>
+                    <span id="cart-total-price">0 ETB</span>
+                </div>
+                <button class="btn-checkout" onclick="checkout()">Checkout on WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <div class="nav-tab active-nav" id="nav-home" onclick="showPage('home')">🏠<span>Home</span></div>
+        <div class="nav-tab" id="nav-shop" onclick="showPage('shop')">🛍️<span>Shop</span></div>
+        <div class="nav-tab" id="nav-contact" onclick="showPage('contact')">✉️<span>Contact</span></div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
